@@ -124,11 +124,11 @@ button:hover{
     background: #ce2929;
 }
 /* hiding arrows from input section */
-input::-webkit-outer-spin-button,
+/* input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
+} */
 
 .footer{
     background-color:transparent;

@@ -1,20 +1,31 @@
-var sideInput = document.querySelectorAll(".side-input");
-var hypotenuseBtn = document.querySelector("#hypotenuse-btn");
-var outputDiv = document.querySelector("#output");
+const base_value = document.querySelector('#base_value')
+const height_value = document.querySelector('#height_value')
+const result_section = document.getElementById('result_section')
+const submit_button = document.getElementById('submit_button')
 
-function calculateHypotenuse(){
-    var a = Number(sideInput[0].value);
-    var b = Number(sideInput[1].value);
-    if(a == 0 || b == 0){
-        outputDiv.innerText = "Please Enter all required fields 🧐";
-    }
-    else if(a < 0 || b < 0){
-        outputDiv.innerText = "Please Enter positive values only 😐";
-    }
-    else{
-    var sumOfSquares = a**2 +b**2;
-    var lengthOfHypotenuse = Math.sqrt(sumOfSquares);
-    outputDiv.innerText = "The length of Hypotenuse is " + lengthOfHypotenuse;
-    }
+
+
+
+function calculateSumOfSquare(a, b) {
+    const sumOfSquares = a * a + b * b;
+    return sumOfSquares;
 }
-hypotenuseBtn.addEventListener("click", calculateHypotenuse);
+  
+function calculateHypotenuse() {
+  if(!base_value.value || !height_value.value){
+    return  result_section.innerText = "Enter valid data" 
+  }else if(base_value.value <= 0 ||height_value.value <=0){
+    return  result_section.innerText = "Enter valid data" 
+  }else {
+    const sumOfSquares = calculateSumOfSquare(
+      Number(base_value.value),
+      Number(height_value.value)
+    )
+    const lengthOfHypotenuse = Math.sqrt(sumOfSquares);
+    result_section.innerText = "The length of hypotenuse is " + lengthOfHypotenuse;
+  }
+  
+  
+  }
+  
+submit_button.addEventListener("click", calculateHypotenuse);

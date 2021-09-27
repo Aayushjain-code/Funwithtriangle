@@ -20,7 +20,7 @@ function calculateScore() {
         }
     })
     if(score===0){
-        result_section.innerText = "You have not attempted any question!"
+        result_section.innerText = "Please attempt all the questions!"
         result_section.style['color']="red"
     }else{
         result_section.innerText = "The score is " + score
